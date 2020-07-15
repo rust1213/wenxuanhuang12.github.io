@@ -152,6 +152,83 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-7-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/15/7-1/">7--1</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/15/7-1/" class="archive-article-date">
+  	<time datetime="2020-07-15T01:15:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>打开Ubuntu虚拟机上的摄像头</p>
+<p>遇到的报错：</p>
+<p>Error: Cannot identify device ‘/dev/video0’</p>
+<p><img src="/2020/07/15/7-1/E:%5Chexo%5Cblog%5Csource%5Cimages%5C1.jpg" alt="1"></p>
+<p>在虚拟机中添加可移动设备：</p>
+<p><img src="/2020/07/15/7-1/E:%5Chexo%5Cblog%5Csource%5Cimages%5C2.jpg.png" alt="2.jpg"></p>
+<p>测试：我们用cheese测试一下，sudo apt-get install cheese</p>
+<p><img src="/2020/07/15/7-1/E:%5Chexo%5Cblog%5Csource%5Cimages%5C3.jpg" alt="3"></p>
+<p>config文件中VideoSrc的参数：v4l2src device=/dev/video0 ! video/x-raw, width=640, height=480 framerate=30/1 ! videoconvert ! queue’</p>
+<p>gstreamer 中有很多插件，对于V4L2框架中的视频输入设备和视频输出设备分别由v4l2src和v4l2sink插件来对应。</p>
+<p>其实v4l2src和v4l2sink也都是调用标准的v4l2 api来实现的,只不过将其整入到了gstreamer框架中，加入了gstreamer的一些特性而已。 </p>
+<p>1.v4l2src</p>
+<p>v4l2src插件默认打开的设备是/dev/video0，如果想换可以通过gst-launch-1.0 v4l2src device=/dev/video*的方式来切换，v4l2src默认所申请的buffer个数是5个。</p>
+<p>2.v4l2sink</p>
+<p>v4l2sink插件默认打开的设备是/dev/video1,如果想换可以通过gst-launch-1.0 v4l2sink device=/dev/video*的方式来切换，v4l2sink默认申请的buffer个数是2个，不过这两个buffer的入输入队列有点特别，是在调用ioctl（VIDIOC_STREAMON）之前，先调用ioctl(VIDIOC_QBUF）将第一个buffer入输入队列，再调用ioctl（VIDIOC_STREAMON）之后，再调用ioctl(VIDIOC_QBUF）将第二个buffer入输入队列。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/15/7-1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Anacondad的安装和使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
