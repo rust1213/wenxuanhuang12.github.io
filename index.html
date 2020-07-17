@@ -172,7 +172,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="ssh远程登录模块"><a href="#ssh远程登录模块" class="headerlink" title="ssh远程登录模块"></a>ssh远程登录模块</h2><p>下载ssh</p>
+<p>sudo apt-get install ssh</p>
+<p>运行ssh</p>
+<p>service ssh start   —启动ssh </p>
+<p>service ssh stop   —终止ssh </p>
+<p>service ssh restart   —重启ssh</p>
+<p>查看ssh是否启动</p>
+<p>service ssh status</p>
+<p><img src="/2020/07/16/7-4/ssh1.jpg" alt></p>
+<p>ssh远程登录<br>在服务器、设备端软件运行后，在客户端中输入用户名、密码就可以登陆了。<br>登录成功界面如下：</p>
+<p><img src="/2020/07/16/7-4/ssh1=2.jpg" alt></p>
+
       
 
       
@@ -240,12 +251,44 @@
 <p>2.添加设备，自定义功能</p>
 <p><img src="/2020/07/16/7-3/%E7%89%A9%E8%81%94%E7%BD%912.jpg" alt></p>
 <p>3.查看自定义设备</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>产品名称</td>
+<td>自定义产品名称。</td>
+</tr>
+<tr>
+<td>节点类型</td>
+<td>选择<strong>直连设备</strong>。</td>
+</tr>
+<tr>
+<td>连网方式</td>
+<td>选择<strong>Wi-Fi</strong>。</td>
+</tr>
+<tr>
+<td>数据格式</td>
+<td>选择<strong>ICA标准数据格式（Alink JSON）</strong>。</td>
+</tr>
+<tr>
+<td>认证方式</td>
+<td>选择<strong>设备密钥</strong>。</td>
+</tr>
+</tbody></table>
 <p><img src="/2020/07/16/7-3/%E7%89%A9%E8%81%94%E7%BD%913.jpg" alt></p>
 <h2 id="定义产品物模型"><a href="#定义产品物模型" class="headerlink" title="定义产品物模型"></a>定义产品物模型</h2><p>物联网平台提供的设备端CSDK Demo包中，包含一个完整的物模型JSON文件。</p>
 <p><img src="/2020/07/16/7-3/%E7%89%A9%E8%81%94%E7%BD%914.jpg" alt></p>
 <p>开解压出文件LinkSDK，在demos文件夹中找到mqtt_basic_demo.c文件</p>
 <p>替换设备三元组：</p>
-<p>char *product_key       = “a1ilF5iP7vQ    “;<br>char *device_name       = “device01”;<br>char *device_secret     = “03120d1f786fbb10d02b0e9fdfa2dea4”;</p>
+<p>char *product_key       = “a1FC50FqYCF “;<br>char *device_name       = “device_1”;<br>char *device_secret     = “e10375cebe20fbe3d820491bd5da8141”;</p>
+<p><img src="/2020/07/16/7-3/%E7%89%A9%E8%81%94%E7%BD%916.jpg" alt></p>
+<p>出现的错误：</p>
+<p>设备上线失败</p>
+<p><img src="/2020/07/16/7-3/%E7%89%A9%E8%81%94%E7%BD%915.jpg" alt></p>
 <h3 id="参考文档："><a href="#参考文档：" class="headerlink" title="参考文档："></a>参考文档：</h3><p><a href="https://help.aliyun.com/document_detail/146236.html" target="_blank" rel="noopener">https://help.aliyun.com/document_detail/146236.html</a></p>
 
       
@@ -357,6 +400,7 @@
 </tbody></table>
 <p>import matplotlib.pyplot as plt</p>
 <p>fig = plt.figure(‘lalala’, figsize = (7, 7), dpi = 100, facecolor = ‘y’, edgecolor = ‘r’)<br>plt.plot([1, 2, 3], [1, 2, 3])<br>plt.show()</p>
+<p><img src="/2020/07/16/7-2/plot2.jpg" alt></p>
 
       
 
@@ -434,6 +478,13 @@
 <p>v4l2src插件默认打开的设备是/dev/video0，如果想换可以通过gst-launch-1.0 v4l2src device=/dev/video*的方式来切换，v4l2src默认所申请的buffer个数是5个。</p>
 <p>2.v4l2sink</p>
 <p>v4l2sink插件默认打开的设备是/dev/video1,如果想换可以通过gst-launch-1.0 v4l2sink device=/dev/video*的方式来切换，v4l2sink默认申请的buffer个数是2个，不过这两个buffer的入输入队列有点特别，是在调用ioctl（VIDIOC_STREAMON）之前，先调用ioctl(VIDIOC_QBUF）将第一个buffer入输入队列，再调用ioctl（VIDIOC_STREAMON）之后，再调用ioctl(VIDIOC_QBUF）将第二个buffer入输入队列。</p>
+<p>参考资料：<a href="https://blog.csdn.net/han2529386161/article/details/102896875" target="_blank" rel="noopener">https://blog.csdn.net/han2529386161/article/details/102896875</a></p>
+<p>如果我想让两个元件之间的数据流变为某种媒体类型<code>video/x-raw</code>，并限制帧率等状态，可以通过Caps filter实现，最简单的方法是使用函数<code>gst_caps_new_simple()</code>。</p>
+<p>static gboolean<br>link_elements_with_filter (GstElement *element1, GstElement *element2)<br>{<br>  gboolean link_ok;<br>  GstCaps *caps;</p>
+<p>  caps = gst_caps_new_simple (“video/x-raw”,<br>          “format”, G_TYPE_STRING, “I420”,<br>          “width”, G_TYPE_INT, 384,<br>          “height”, G_TYPE_INT, 288,<br>          “framerate”, GST_TYPE_FRACTION, 25, 1,<br>          NULL);</p>
+<p>  link_ok = gst_element_link_filtered (element1, element2, caps);<br>  gst_caps_unref (caps);</p>
+<p>  if (!link_ok) {<br>    g_warning (“Failed to link element1 and element2!”);<br>  }</p>
+<p>  return link_ok;<br>}</p>
 
       
 
