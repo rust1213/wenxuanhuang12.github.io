@@ -398,9 +398,17 @@
 <td align="center">是否对存在的画布进行清除，默认为False，即自动创建新画布</td>
 </tr>
 </tbody></table>
+<p>一个简单例子：</p>
 <p>import matplotlib.pyplot as plt</p>
 <p>fig = plt.figure(‘lalala’, figsize = (7, 7), dpi = 100, facecolor = ‘y’, edgecolor = ‘r’)<br>plt.plot([1, 2, 3], [1, 2, 3])<br>plt.show()</p>
+<p><img src="/2020/07/16/7-2/plot1.jpg" alt></p>
+<p>假设你是一家餐馆的首席执行官，正在考虑不同的城市开设一个新的分店。该连锁店已经在各个城市拥有卡车，而且你有来自城市的利润和人口数据。<br>您希望使用这些数据来帮助您选择将哪个城市扩展到下一个城市。</p>
+<p>使用梯度下降来实现线性回归，以最小化成本函数。</p>
+<p>代价函数：<em>J</em>(<em>θ</em>)=2<em>m</em>1<em>i</em>=1∑<em>m</em>(<em>hθ</em>(<em>x</em>(<em>i</em>))−<em>y</em>(<em>i</em>))2</p>
+<p>x = np.linspace(data.Population.min(), data.Population.max(), 100)  # 横坐标<br>f = final_theta[0, 0] + (final_theta[0, 1] * x)  # 纵坐标，利润</p>
+<p>fig, ax = plt.subplots(figsize=(6,4))<br>ax.plot(x, f, ‘r’, label=’Prediction’)<br>ax.scatter(data[‘Population’], data.Profit, label=’Traning Data’)<br>ax.legend(loc=2)  # 2表示在左上角<br>ax.set_xlabel(‘Population’)<br>ax.set_ylabel(‘Profit’)<br>ax.set_title(‘Predicted Profit vs. Population Size’)<br>plt.show()</p>
 <p><img src="/2020/07/16/7-2/plot2.jpg" alt></p>
+<p>参考资料：<a href="https://blog.csdn.net/Cowry5/article/details/80174130" target="_blank" rel="noopener">https://blog.csdn.net/Cowry5/article/details/80174130</a></p>
 
       
 
