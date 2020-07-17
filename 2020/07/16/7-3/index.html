@@ -8,15 +8,22 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>7-3 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="Linux设备接入物联网平台阿里云提供的设备端C语言SDK可以直接运行于Linux系统，并通过MQTT协议接入物联网平台。 1.使用物联网平台的第一步：在控制台创建产品。  2.添加设备，自定义功能  3.查看自定义设备  定义产品物模型物联网平台提供的设备端CSDK Demo包中，包含一个完整的物模型JSON文件。  开解压出文件LinkSDK，在demos文件夹中找到mqtt_basic_de">
+<meta property="og:type" content="article">
 <meta property="og:title" content="7-3">
 <meta property="og:url" content="http://yoursite.com/2020/07/16/7-3/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Linux设备接入物联网平台阿里云提供的设备端C语言SDK可以直接运行于Linux系统，并通过MQTT协议接入物联网平台。 1.使用物联网平台的第一步：在控制台创建产品。  2.添加设备，自定义功能  3.查看自定义设备  定义产品物模型物联网平台提供的设备端CSDK Demo包中，包含一个完整的物模型JSON文件。  开解压出文件LinkSDK，在demos文件夹中找到mqtt_basic_de">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/2020/07/16/7-3/%E7%89%A9%E8%81%94%E7%BD%911.jpg">
+<meta property="og:image" content="http://yoursite.com/2020/07/16/7-3/%E7%89%A9%E8%81%94%E7%BD%912.jpg">
+<meta property="og:image" content="http://yoursite.com/2020/07/16/7-3/%E7%89%A9%E8%81%94%E7%BD%913.jpg">
+<meta property="og:image" content="http://yoursite.com/2020/07/16/7-3/%E7%89%A9%E8%81%94%E7%BD%914.jpg">
 <meta property="article:published_time" content="2020-07-16T12:08:29.000Z">
-<meta property="article:modified_time" content="2020-07-16T12:08:29.833Z">
+<meta property="article:modified_time" content="2020-07-17T09:05:12.805Z">
 <meta property="article:author" content="PAOZI">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2020/07/16/7-3/%E7%89%A9%E8%81%94%E7%BD%911.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -172,7 +179,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="Linux设备接入物联网平台"><a href="#Linux设备接入物联网平台" class="headerlink" title="Linux设备接入物联网平台"></a>Linux设备接入物联网平台</h1><p>阿里云提供的设备端C语言SDK可以直接运行于Linux系统，并通过MQTT协议接入物联网平台。</p>
+<p>1.使用物联网平台的第一步：在控制台创建产品。</p>
+<p><img src="/2020/07/16/7-3/%E7%89%A9%E8%81%94%E7%BD%911.jpg" alt></p>
+<p>2.添加设备，自定义功能</p>
+<p><img src="/2020/07/16/7-3/%E7%89%A9%E8%81%94%E7%BD%912.jpg" alt></p>
+<p>3.查看自定义设备</p>
+<p><img src="/2020/07/16/7-3/%E7%89%A9%E8%81%94%E7%BD%913.jpg" alt></p>
+<h2 id="定义产品物模型"><a href="#定义产品物模型" class="headerlink" title="定义产品物模型"></a>定义产品物模型</h2><p>物联网平台提供的设备端CSDK Demo包中，包含一个完整的物模型JSON文件。</p>
+<p><img src="/2020/07/16/7-3/%E7%89%A9%E8%81%94%E7%BD%914.jpg" alt></p>
+<p>开解压出文件LinkSDK，在demos文件夹中找到mqtt_basic_demo.c文件</p>
+<p>替换设备三元组：</p>
+<p>char *product_key       = “a1ilF5iP7vQ    “;<br>char *device_name       = “device01”;<br>char *device_secret     = “03120d1f786fbb10d02b0e9fdfa2dea4”;</p>
+<h3 id="参考文档："><a href="#参考文档：" class="headerlink" title="参考文档："></a>参考文档：</h3><p><a href="https://help.aliyun.com/document_detail/146236.html" target="_blank" rel="noopener">https://help.aliyun.com/document_detail/146236.html</a></p>
+
       
 
       

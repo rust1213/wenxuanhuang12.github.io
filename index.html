@@ -234,7 +234,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="Linux设备接入物联网平台"><a href="#Linux设备接入物联网平台" class="headerlink" title="Linux设备接入物联网平台"></a>Linux设备接入物联网平台</h1><p>阿里云提供的设备端C语言SDK可以直接运行于Linux系统，并通过MQTT协议接入物联网平台。</p>
+<p>1.使用物联网平台的第一步：在控制台创建产品。</p>
+<p><img src="/2020/07/16/7-3/%E7%89%A9%E8%81%94%E7%BD%911.jpg" alt></p>
+<p>2.添加设备，自定义功能</p>
+<p><img src="/2020/07/16/7-3/%E7%89%A9%E8%81%94%E7%BD%912.jpg" alt></p>
+<p>3.查看自定义设备</p>
+<p><img src="/2020/07/16/7-3/%E7%89%A9%E8%81%94%E7%BD%913.jpg" alt></p>
+<h2 id="定义产品物模型"><a href="#定义产品物模型" class="headerlink" title="定义产品物模型"></a>定义产品物模型</h2><p>物联网平台提供的设备端CSDK Demo包中，包含一个完整的物模型JSON文件。</p>
+<p><img src="/2020/07/16/7-3/%E7%89%A9%E8%81%94%E7%BD%914.jpg" alt></p>
+<p>开解压出文件LinkSDK，在demos文件夹中找到mqtt_basic_demo.c文件</p>
+<p>替换设备三元组：</p>
+<p>char *product_key       = “a1ilF5iP7vQ    “;<br>char *device_name       = “device01”;<br>char *device_secret     = “03120d1f786fbb10d02b0e9fdfa2dea4”;</p>
+<h3 id="参考文档："><a href="#参考文档：" class="headerlink" title="参考文档："></a>参考文档：</h3><p><a href="https://help.aliyun.com/document_detail/146236.html" target="_blank" rel="noopener">https://help.aliyun.com/document_detail/146236.html</a></p>
+
       
 
       
@@ -296,7 +309,55 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h3 id="matplotlib-pyplot"><a href="#matplotlib-pyplot" class="headerlink" title="matplotlib.pyplot()"></a>matplotlib.pyplot()</h3><p>plt、fig和ax：</p>
+<p>这是我们看到作图程序中最常见的几个词。plt是matplotlib.pyplot的简称，我们一般都会用它来代替导入的模块；fig一般出现在<br>fig = plt.figure()这个命令中，是常用来表示当前画布的一个变量，虽然可以用别的但是大家一般都用fig（figure的缩写）；ax一般和fig一起出现在fig, ax = plt.subplots()命令中，或者单独出现在ax = plt.subplot()命令中，表示当前画布的当前子图对象</p>
+<table>
+<thead>
+<tr>
+<th align="center">参数名称</th>
+<th align="center">参数类型</th>
+<th align="center">参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">num</td>
+<td align="center">integer or string</td>
+<td align="center">画布的名称或序号，默认为从1开始的升序序列</td>
+</tr>
+<tr>
+<td align="center">figsize</td>
+<td align="center">(float, float)</td>
+<td align="center">画布尺寸，默认6.4 x 4.8</td>
+</tr>
+<tr>
+<td align="center">dpi</td>
+<td align="center">integer</td>
+<td align="center">分辨率，默认100</td>
+</tr>
+<tr>
+<td align="center">facecolor</td>
+<td align="center">color spec</td>
+<td align="center">背景色，默认白色（‘w’）</td>
+</tr>
+<tr>
+<td align="center">edgecolor</td>
+<td align="center">color spec</td>
+<td align="center">边界色，默认白色（‘w’）</td>
+</tr>
+<tr>
+<td align="center">frameon</td>
+<td align="center">bool</td>
+<td align="center">是否有边界，默认为True</td>
+</tr>
+<tr>
+<td align="center">clear</td>
+<td align="center">bool</td>
+<td align="center">是否对存在的画布进行清除，默认为False，即自动创建新画布</td>
+</tr>
+</tbody></table>
+<p>import matplotlib.pyplot as plt</p>
+<p>fig = plt.figure(‘lalala’, figsize = (7, 7), dpi = 100, facecolor = ‘y’, edgecolor = ‘r’)<br>plt.plot([1, 2, 3], [1, 2, 3])<br>plt.show()</p>
+
       
 
       

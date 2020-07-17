@@ -8,13 +8,15 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>7-2 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="matplotlib.pyplot()plt、fig和ax： 这是我们看到作图程序中最常见的几个词。plt是matplotlib.pyplot的简称，我们一般都会用它来代替导入的模块；fig一般出现在fig &#x3D; plt.figure()这个命令中，是常用来表示当前画布的一个变量，虽然可以用别的但是大家一般都用fig（figure的缩写）；ax一般和fig一起出现在fig, ax &#x3D; plt.sub">
+<meta property="og:type" content="article">
 <meta property="og:title" content="7-2">
 <meta property="og:url" content="http://yoursite.com/2020/07/16/7-2/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="matplotlib.pyplot()plt、fig和ax： 这是我们看到作图程序中最常见的几个词。plt是matplotlib.pyplot的简称，我们一般都会用它来代替导入的模块；fig一般出现在fig &#x3D; plt.figure()这个命令中，是常用来表示当前画布的一个变量，虽然可以用别的但是大家一般都用fig（figure的缩写）；ax一般和fig一起出现在fig, ax &#x3D; plt.sub">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-07-16T12:07:58.000Z">
-<meta property="article:modified_time" content="2020-07-16T12:07:58.870Z">
+<meta property="article:modified_time" content="2020-07-17T06:58:49.878Z">
 <meta property="article:author" content="PAOZI">
 <meta name="twitter:card" content="summary">
   
@@ -172,7 +174,55 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h3 id="matplotlib-pyplot"><a href="#matplotlib-pyplot" class="headerlink" title="matplotlib.pyplot()"></a>matplotlib.pyplot()</h3><p>plt、fig和ax：</p>
+<p>这是我们看到作图程序中最常见的几个词。plt是matplotlib.pyplot的简称，我们一般都会用它来代替导入的模块；fig一般出现在<br>fig = plt.figure()这个命令中，是常用来表示当前画布的一个变量，虽然可以用别的但是大家一般都用fig（figure的缩写）；ax一般和fig一起出现在fig, ax = plt.subplots()命令中，或者单独出现在ax = plt.subplot()命令中，表示当前画布的当前子图对象</p>
+<table>
+<thead>
+<tr>
+<th align="center">参数名称</th>
+<th align="center">参数类型</th>
+<th align="center">参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">num</td>
+<td align="center">integer or string</td>
+<td align="center">画布的名称或序号，默认为从1开始的升序序列</td>
+</tr>
+<tr>
+<td align="center">figsize</td>
+<td align="center">(float, float)</td>
+<td align="center">画布尺寸，默认6.4 x 4.8</td>
+</tr>
+<tr>
+<td align="center">dpi</td>
+<td align="center">integer</td>
+<td align="center">分辨率，默认100</td>
+</tr>
+<tr>
+<td align="center">facecolor</td>
+<td align="center">color spec</td>
+<td align="center">背景色，默认白色（‘w’）</td>
+</tr>
+<tr>
+<td align="center">edgecolor</td>
+<td align="center">color spec</td>
+<td align="center">边界色，默认白色（‘w’）</td>
+</tr>
+<tr>
+<td align="center">frameon</td>
+<td align="center">bool</td>
+<td align="center">是否有边界，默认为True</td>
+</tr>
+<tr>
+<td align="center">clear</td>
+<td align="center">bool</td>
+<td align="center">是否对存在的画布进行清除，默认为False，即自动创建新画布</td>
+</tr>
+</tbody></table>
+<p>import matplotlib.pyplot as plt</p>
+<p>fig = plt.figure(‘lalala’, figsize = (7, 7), dpi = 100, facecolor = ‘y’, edgecolor = ‘r’)<br>plt.plot([1, 2, 3], [1, 2, 3])<br>plt.show()</p>
+
       
 
       
